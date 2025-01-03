@@ -3,6 +3,7 @@
   margin: 20px 0px;
   cursor: pointer;
   border-radius: 0.5rem;
+  border: 3px solid rgb(128, 155, 124);
 }
 
 .poster:hover {
@@ -19,11 +20,11 @@
 }
 
 .reels {
-  background-color: rgb(53, 53, 53);
+  background-color: #2f4734;
 }
 
 .header {
-  background-color: rgb(28, 28, 28);
+  background-color: rgb(21, 30, 20);
   padding: 10px;
   box-shadow: 0 0 5px #757575;
 }

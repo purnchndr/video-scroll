@@ -16,12 +16,12 @@ function Reels() {
     '5.webm',
   ];
   const [current, setCurrent] = useState(null);
-  const handelCurrent = (e, num) => setCurrent(c => (num ? num : null));
+  const handelCurrent = (e, num) => setCurrent(c => (num != null ? num : null));
 
   console.log(current);
   return (
     <>
-      {current && (
+      {current !== null && (
         <Reel videos={reels} handelCurrent={handelCurrent} selected={current} />
       )}
       <div className={style.reels}>
@@ -34,7 +34,7 @@ function Reels() {
               className={style.poster}
               src={`./videos/${c}`}
               key={i}
-              onClick={e => handelCurrent(e, i + 1)}
+              onClick={e => handelCurrent(e, i % 5)}
             />
           ))}
         </div>
