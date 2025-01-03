@@ -1,8 +1,12 @@
-# React + Vite
+# Video Scroll
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a demo app for reel scrolling app prototype.
 
-Currently, two official plugins are available:
+To run this app on local machine follow mentioned steps:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- $ git clone https://github.com/purnchndr/video-scroll.git
+- $ cd video-scroll
+- $ npm install
+- $ npm run dev
+
+This app is developed by [Purnachadnra](https://github.com/purnchndr/)

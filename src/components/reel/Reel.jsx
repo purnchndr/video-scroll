@@ -4,7 +4,7 @@ function Reel({ videos, handelCurrent, selected }) {
   const vid = useRef();
   const [current, setCurrent] = useState(selected);
   const [liked, setLiked] = useState(
-    JSON.parse(localStorage.getItem('liked') || []).includes(current)
+    JSON.parse(localStorage.getItem('liked') || '[]').includes(current)
   );
 
   //   useEffect(() => {
