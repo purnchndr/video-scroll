@@ -36,7 +36,7 @@ function Reel({ videos, handelCurrent, selected }) {
 
   function like(e) {
     e.stopPropagation();
-    let likedVids = JSON.parse(localStorage.getItem('liked') || []);
+    let likedVids = JSON.parse(localStorage.getItem('liked') || '[]');
     console.log(likedVids);
     if (liked) {
       likedVids = likedVids.filter(e => e !== current);

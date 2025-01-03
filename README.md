@@ -9,4 +9,6 @@ To run this app on local machine follow mentioned steps:
 - $ npm install
 - $ npm run dev
 
+Live Preview [Here](https://videos-scroll.netlify.app/)
+
 This app is developed by [Purnachadnra](https://github.com/purnchndr/)
