@@ -22,7 +22,7 @@ function Reels() {
   return (
     <>
       {current && (
-        <Reel video={`./videos/${current}.webm`} close={handelCurrent} />
+        <Reel videos={reels} handelCurrent={handelCurrent} selected={current} />
       )}
       <div className={style.reels}>
         <div className={style.header}>

@@ -1,37 +1,19 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import style from './Reel.module.css';
-function Reel({ video, close }) {
-  const poster = useRef();
+function Reel({ videos, handelCurrent, selected }) {
   const vid = useRef();
+  const [current, setCurrent] = useState(selected);
 
-  //   poster.current?.onscroll = function (e) {
-  //     // print "false" if direction is down and "true" if up
-  //     const isUp = this.oldScroll > this.scrollY;
-  //     console.log(isUp, this.oldScroll - this.scrollY);
-  //     this.oldScroll = this.scrollY;
-  //   };
-
-  poster.current &&
-    (poster.current.onscroll = function (e) {
+  useEffect(() => {
+    window.onscroll = function (e) {
       // print "false" if direction is down and "true" if up
       const isUp = this.oldScroll > this.scrollY;
       console.log(isUp, this.oldScroll - this.scrollY);
+      setCurrent(current + (isUp ? 1 : -1));
       this.oldScroll = this.scrollY;
-    });
-
-  function scrolled(e) {
-    console.log('scrolled');
-    // print "false" if direction is down and "true" if up
-    const isUp = this.oldScroll > this.scrollY;
-    console.log(isUp, this.oldScroll - this.scrollY);
-    this.oldScroll = this.scrollY;
-  }
-  //     poster.current.onscroll = function (e) {
-  //       // print "false" if direction is down and "true" if up
-  //       const isUp = this.oldScroll > this.scrollY;
-  //       console.log(isUp, this.oldScroll - this.scrollY);
-  //       this.oldScroll = this.scrollY;
-  //     };
+    };
+    return () => (window.onscroll = () => {});
+  });
 
   function pause(e) {
     e.stopPropagation();
@@ -41,15 +23,14 @@ function Reel({ video, close }) {
 
   return (
     <div
-      ref={poster}
+      id='reels'
       className={style.reel}
-      onScroll={scrolled}
-      onClick={e => close(e, null)}
+      onClick={e => handelCurrent(e, null)}
     >
       <video
         ref={vid}
         className={style.video}
-        src={video}
+        src={`./videos/${videos[current]}`}
         onClick={pause}
         loop
         autoPlay
